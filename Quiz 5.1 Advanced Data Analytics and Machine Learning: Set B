@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+
+exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],
+'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],
+'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],
+'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'no', 'yes']}
+labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+df = pd.DataFrame(exam_data , index=labels)
+print(df[['attempts', 'qualify']])
+
+#Output 
+   attempts qualify
+a         1     yes
+b         3      no
+c         2     yes
+d         3      no
+e         2      no
+f         3     yes
+g         1     yes
+h         1      no
+i         2      no
+j         1     yes
+
+Explanation
+
+Pandas and numoy libaries allow for the creation, reading, and manipulation of dataframes. Variable 'df' selects columns 'attempts' and 'qualify' using pandas libary command 'pd.Dataframe', 
+we then print 'df' with the parameters 'index' must be equal to 'attempts' and 'qualify'
